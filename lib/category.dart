@@ -11,8 +11,9 @@ class categoryScreen extends StatelessWidget {
               onPressed: () {},
               child: Image.asset(
                 'images/quizz1.png',
-                width: 600,
-                height: 240,
+                width: 500,
+                height: 100,
+                fit: BoxFit.fill,
               )),
         ]),
       ),

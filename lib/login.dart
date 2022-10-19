@@ -1,35 +1,27 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/signup.dart';
 
 import 'forget.dart';
+import 'homepage.dart';
 
 class LoginScreen extends StatelessWidget {
   TextEditingController txtUsernameController = TextEditingController();
   TextEditingController txtPasswordController = TextEditingController();
+  String _username='abc';
+  String _password='123456789';
   bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(home: Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            width: 200,
-            height: 200,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fitWidth,
-                image: NetworkImage(
-                  'images/login2.png',
-                ),
-              ),
-            ),
-          ),
+          Image.asset('images/login2.png',width:250, height: 250,),
           Container(
             padding: const EdgeInsets.all(15),
             child: TextField(
@@ -102,6 +94,9 @@ class LoginScreen extends StatelessWidget {
                         );
                       });
                 }
+                else if(txtPasswordController.text==_password&&txtUsernameController.text==_username){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => homepageScreeen()));
+                }
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 14, 234, 76),
@@ -158,6 +153,7 @@ class LoginScreen extends StatelessWidget {
           ),
         ],
       ),
+    ),
     );
   }
 }

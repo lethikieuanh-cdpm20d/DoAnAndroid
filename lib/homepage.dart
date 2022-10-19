@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/start.dart';
+import 'login.dart';
 import 'category.dart';
 
 class homepageScreeen extends StatelessWidget {
@@ -54,10 +56,17 @@ class homepageScreenState extends State<homepageScreenHome> {
               child: Text('Trương Đức Quyền'),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: const Text('Đăng xuất',style: TextStyle(color: Colors.red),),
               onTap: () {
-                Navigator.pop(context);
-              },
+                Navigator.pushAndRemoveUntil<void>(
+                context,
+                MaterialPageRoute<void>(
+                  // ignore: prefer_const_constructors
+                  builder: (BuildContext context) => StartApp(),
+                ),
+                (Route<dynamic> route) => false,
+              );
+              }
             ),
             ListTile(
               title: Text('Item 2'),
@@ -73,11 +82,11 @@ class homepageScreenState extends State<homepageScreenHome> {
           title: Row(
             children: [
               Container(
-                padding: const EdgeInsets.only(left: 130),
+                padding: const EdgeInsets.only(left: 80),
                 child: const Text('QuizzGame'),
               ),
               Container(
-                padding: const EdgeInsets.only(left: 140),
+                padding: const EdgeInsets.only(left: 70),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.search),
