@@ -33,6 +33,7 @@ class forgetScreen extends StatelessWidget {
                   labelText: 'Tên đăng nhập',
                   labelStyle: const TextStyle(color: Colors.green),
                   border: const OutlineInputBorder(),
+                  
                   prefixIcon: const Icon(
                     Icons.person,
                     color: Colors.green,

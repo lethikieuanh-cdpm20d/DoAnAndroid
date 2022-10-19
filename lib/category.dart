@@ -14,6 +14,7 @@ class categoryScreen extends StatelessWidget {
                 width: 500,
                 height: 100,
                 fit: BoxFit.fill,
+                
               )),
         ]),
       ),

@@ -13,6 +13,7 @@ class signupScreen extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
       body: Center(
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
