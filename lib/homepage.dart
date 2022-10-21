@@ -4,11 +4,13 @@ import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/start.dart';
 import 'login.dart';
 import 'category.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class homepageScreeen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: homepageScreenHome(),
     );
   }
@@ -49,14 +51,74 @@ class homepageScreenState extends State<homepageScreenHome> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: <Widget>[
+          children:[
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(255, 17, 224, 93),
               ),
-              child: Text('Trương Đức Quyền'),
+              child: CircleAvatar(
+              child: Text(
+                'HN',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+            ),
             ),
             ListTile(
+              leading: const Icon(
+                Icons.person,
+                color: Colors.green,
+              ),
+              title: const Text('Photo/Video'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.person,
+                color: Colors.blue,
+              ),
+              title: const Text('Tag People'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.tag_faces_outlined,
+                color: Colors.orange,
+              ),
+              title: const Text('Felling/Activity'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.map,
+                color: Colors.red,
+              ),
+              title: const Text('Checking'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.camera,
+                color: Colors.lightBlue,
+              ),
+              title: const Text('Camera'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+             ListTile(
+              leading: const Icon(
+                Icons.output_rounded,
+                color: Colors.red,
+              ),
               title: const Text('Đăng xuất',style: TextStyle(color: Colors.red),),
               onTap: () {
                 Navigator.pushAndRemoveUntil<void>(
@@ -68,12 +130,6 @@ class homepageScreenState extends State<homepageScreenHome> {
                 (Route<dynamic> route) => false,
               );
               }
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                Navigator.pop(context);
-              },
             ),
           ],
         ),
@@ -96,26 +152,19 @@ class homepageScreenState extends State<homepageScreenHome> {
             ],
           )),
       body: getBody(),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: ConvexAppBar(
+        style: TabStyle.flip,
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
-        type: BottomNavigationBarType.fixed,
-        currentIndex: selectedIndex,
-        selectedItemColor: Colors.blue,
-        selectedIconTheme:
-            const IconThemeData(color: Colors.blue, opacity: 1.0, size: 45),
-        unselectedIconTheme:
-            const IconThemeData(color: Colors.black45, opacity: 0.5, size: 25),
         // ignore: prefer_const_literals_to_create_immutables
         items: [
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.category_outlined), label: 'Chủ đề'),
-          const BottomNavigationBarItem(icon: Icon(Icons.house), label: ''),
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.gamepad_outlined), label: 'Thách đấu')
+          const TabItem(icon: Icons.list,title:'Chủ đề'),
+          TabItem(icon: Icons.house,title: '            '),
+          TabItem(icon: Icons.gamepad_outlined,title: 'Thách đấu'),
         ],
+        initialActiveIndex: 1,
         onTap: (int index) {
           onTapHandler(index);
-        },
+        }
       ),
     );
   }
