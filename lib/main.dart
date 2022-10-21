@@ -9,8 +9,10 @@ void main() => runApp(DoanApp());
 class DoanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return  MaterialApp(
-      home: StartApp(),
+      debugShowCheckedModeBanner: false,
+      home: const StartApp(),
     );
   }
 }
