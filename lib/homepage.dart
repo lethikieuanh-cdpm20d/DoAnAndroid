@@ -69,7 +69,7 @@ class homepageScreenState extends State<homepageScreenHome> {
                 Icons.person,
                 color: Colors.green,
               ),
-              title: const Text('Photo/Video'),
+              title: const Text('Thông tin tài khoản'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -79,17 +79,17 @@ class homepageScreenState extends State<homepageScreenHome> {
                 Icons.person,
                 color: Colors.blue,
               ),
-              title: const Text('Tag People'),
+              title: const Text('Bạn bè'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
               leading: const Icon(
-                Icons.tag_faces_outlined,
+                Icons.insert_chart_outlined,
                 color: Colors.orange,
               ),
-              title: const Text('Felling/Activity'),
+              title: const Text('Bảng xếp hạng'),
               onTap: () {
                 Navigator.pop(context);
               },

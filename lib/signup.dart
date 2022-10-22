@@ -12,7 +12,10 @@ class signupScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
-      body: Center(
+      body: ListView.builder( 
+        itemCount: 1,
+        itemBuilder: (context, index) {
+        return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -197,6 +200,8 @@ class signupScreen extends StatelessWidget {
             ),
           ],
         ),
+      );
+        }
       ),
     );
   }
