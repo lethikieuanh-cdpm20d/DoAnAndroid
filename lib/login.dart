@@ -20,7 +20,10 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
-      body: Column(
+      body: ListView.builder( 
+        itemCount: 1,
+        itemBuilder: (context, index) {
+        return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset('images/login2.png',width:250, height: 250,),
@@ -155,6 +158,8 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ],
+      );
+        }
       ),
     ),
     );

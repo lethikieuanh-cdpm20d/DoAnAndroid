@@ -8,14 +8,17 @@ class forgetScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
-      body: Center(
+      body: ListView.builder( 
+        itemCount:1,
+        itemBuilder: (context, index) {
+        return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               padding: const EdgeInsets.only(bottom: 20, top: 50),
               child: const Text(
-                'Thay đổi mật khẩu',
+                'Quên mật khẩu',
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -23,7 +26,7 @@ class forgetScreen extends StatelessWidget {
               ),
             ),
             Container(
-                padding: const EdgeInsets.only(right: 120, top: 20),
+                padding: const EdgeInsets.only(right: 15, top: 20),
                 child: const Text(
                     'Vui lòng điền tên đăng nhập bạn sử dụng để đăng nhập')),
             Container(
@@ -53,7 +56,7 @@ class forgetScreen extends StatelessWidget {
             ),
             Container(
                 padding: const EdgeInsets.only(
-                  right: 160,
+                  right: 60,
                 ),
                 child: const Text(
                     'Vui lòng điền tên email bạn sử dụng để đăng ký')),
@@ -82,8 +85,25 @@ class forgetScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              padding: const EdgeInsets.all(15),
+              child: ElevatedButton(
+                onPressed: (){},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 14, 234, 76),
+                  minimumSize: const Size(200, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  )),
+              child: const Text(
+                'Xác nhận',
+              ),
+              ),
+            )
           ],
         ),
+        );
+        }
       ),
     );
   }
