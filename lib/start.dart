@@ -7,9 +7,7 @@ class StartApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 17, 224, 93),
         ),
@@ -22,7 +20,6 @@ class StartApp extends StatelessWidget {
           },
           child: Image.asset('images/login.png'),
         )),
-      ),
-    );
+      );
   }
 }
