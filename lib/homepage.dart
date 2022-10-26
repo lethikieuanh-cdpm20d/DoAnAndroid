@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/personal.dart';
+import 'package:flutter_application_1/search.dart';
 import 'package:flutter_application_1/start.dart';
 import 'login.dart';
 import 'category.dart';
@@ -71,7 +73,9 @@ class homepageScreenState extends State<homepageScreenHome> {
               ),
               title: const Text('Thông tin tài khoản'),
               onTap: () {
-                Navigator.pop(context);
+                //Navigator.pop(context);
+                 Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => personalScreen()));
               },
             ),
             ListTile(
@@ -145,7 +149,10 @@ class homepageScreenState extends State<homepageScreenHome> {
               Container(
                 padding: const EdgeInsets.only(left: 70),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => searchSreen()));
+                  },
                   icon: const Icon(Icons.search),
                 ),
               ),
