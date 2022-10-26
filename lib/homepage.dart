@@ -9,9 +9,8 @@ import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 class homepageScreeen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: homepageScreenHome(),
+    return Scaffold(
+      body: homepageScreenHome(),
     );
   }
 }
@@ -125,7 +124,7 @@ class homepageScreenState extends State<homepageScreenHome> {
                 context,
                 MaterialPageRoute<void>(
                   // ignore: prefer_const_constructors
-                  builder: (BuildContext context) => StartApp(),
+                  builder: (BuildContext context) => LoginScreen(),
                 ),
                 (Route<dynamic> route) => false,
               );
