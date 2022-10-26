@@ -14,9 +14,7 @@ class LoginScreen extends StatelessWidget {
   bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
@@ -161,7 +159,6 @@ class LoginScreen extends StatelessWidget {
       );
         }
       ),
-    ),
     );
   }
 }
