@@ -181,15 +181,8 @@ class categoryScreen extends StatelessWidget {
                       ],
                     )),
               )
-<<<<<<< HEAD
             ]);
           }),
     );
-=======
-        ]);
-        }),
-        
-      );
->>>>>>> origin/kieuanh
   }
 }
