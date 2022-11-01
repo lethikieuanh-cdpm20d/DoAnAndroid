@@ -48,7 +48,34 @@ class homepageScreenState extends State<homepageScreenHome> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: ()async{
+        final shouldPop = await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Thoát khỏi ứng dụng?'),
+              actionsAlignment: MainAxisAlignment.spaceBetween,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                  },
+                  child: const Text('Yes'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, false);
+                  },
+                  child: const Text('No'),
+                ),
+              ],
+            );
+          },
+        );
+        return shouldPop!;
+      },
+      child: Scaffold(
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -124,7 +151,16 @@ class homepageScreenState extends State<homepageScreenHome> {
               ),
               title: const Text('Đăng xuất',style: TextStyle(color: Colors.red),),
               onTap: () {
-                Navigator.pushAndRemoveUntil<void>(
+                showDialog(context: context, builder: (context){
+                  return AlertDialog(
+                    title: const Text('Đăng xuất khỏi ứng dụng?'),
+                    icon: Icon(Icons.notifications),
+              actionsAlignment: MainAxisAlignment.spaceBetween,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                    Navigator.pushAndRemoveUntil<void>(
                 context,
                 MaterialPageRoute<void>(
                   // ignore: prefer_const_constructors
@@ -132,6 +168,18 @@ class homepageScreenState extends State<homepageScreenHome> {
                 ),
                 (Route<dynamic> route) => false,
               );
+                  },
+                  child: const Text('Yes'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, false);
+                  },
+                  child: const Text('No'),
+                ),
+              ],
+                  );
+                });
               }
             ),
           ],
@@ -172,6 +220,7 @@ class homepageScreenState extends State<homepageScreenHome> {
           onTapHandler(index);
         }
       ),
+      )
     );
   }
 }

@@ -76,7 +76,7 @@ class categoryRegimeScrenn extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
-                backgroundColor: Color.fromARGB(255, 206, 199, 199),
+                backgroundColor: const Color.fromARGB(255, 206, 199, 199),
                 foregroundColor: Colors.red,
               ),
               child: Column(
