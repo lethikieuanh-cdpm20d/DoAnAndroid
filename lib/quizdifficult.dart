@@ -93,6 +93,7 @@ class QuizDifficultState extends State<QuizDifficult> {
 
               //cau tra loi
               Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //nut 1

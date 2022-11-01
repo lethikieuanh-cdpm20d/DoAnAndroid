@@ -93,6 +93,7 @@ class QuizMediumState extends State<QuizMedium> {
 
               //cau tra loi
               Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //nut 1

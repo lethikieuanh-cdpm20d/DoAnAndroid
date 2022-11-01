@@ -93,6 +93,7 @@ class Quiz1State extends State<Quiz1> {
 
               //cau tra loi
               Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   //nut 1
