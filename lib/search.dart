@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 class searchSreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         centerTitle: true,//căn giữa
         title: const Text(
@@ -39,7 +37,7 @@ class searchSreen extends StatelessWidget {
                 ),
                 focusedBorder: OutlineInputBorder(
                     borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 46, 107, 48)),
+                        color: Colors.blue),
                     borderRadius: BorderRadius.circular(20)),
               ),
             
@@ -49,7 +47,6 @@ class searchSreen extends StatelessWidget {
           ],
           
      ),
-    ),
     );
   }
 }
