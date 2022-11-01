@@ -181,9 +181,8 @@ class categoryScreen extends StatelessWidget {
                       ],
                     )),
               )
-        ]);
-        }),
-        
-      );
+            ]);
+          }),
+    );
   }
 }

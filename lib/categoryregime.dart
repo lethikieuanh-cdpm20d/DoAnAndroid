@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/quiz1.dart';
+import 'package:flutter_application_1/quizdifficult.dart';
+import 'package:flutter_application_1/quizmedium.dart';
 
 class categoryRegimeScrenn extends StatelessWidget {
   @override
@@ -21,7 +24,13 @@ class categoryRegimeScrenn extends StatelessWidget {
         children: [
           Card(
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Quiz1(),
+                    ));
+              },
               style: TextButton.styleFrom(
                 side: const BorderSide(
                   width: 3,
@@ -52,7 +61,13 @@ class categoryRegimeScrenn extends StatelessWidget {
           ),
           Card(
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizMedium(),
+                    ));
+              },
               style: TextButton.styleFrom(
                 side: const BorderSide(
                   width: 3,
@@ -83,7 +98,13 @@ class categoryRegimeScrenn extends StatelessWidget {
           ),
           Card(
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QuizDifficult(),
+                    ));
+              },
               style: TextButton.styleFrom(
                 side: const BorderSide(
                   width: 3,
