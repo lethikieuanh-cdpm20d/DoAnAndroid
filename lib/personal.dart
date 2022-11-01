@@ -4,9 +4,7 @@ import 'package:flutter_application_1/homepage.dart';
 class personalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
         centerTitle: true,//căn giữa
         title: const Text(
@@ -29,7 +27,6 @@ class personalScreen extends StatelessWidget {
   ],
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
        
-      ),
       ),
     );
   }

@@ -99,7 +99,14 @@ class LoginScreen extends StatelessWidget {
                       });
                 }
                 else if(txtPasswordController.text==_password&&txtUsernameController.text==_username){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => homepageScreeen()));
+                  Navigator.pushAndRemoveUntil<void>(
+                context,
+                MaterialPageRoute<void>(
+                  // ignore: prefer_const_constructors
+                  builder: (BuildContext context) => homepageScreeen(),
+                ),
+                (Route<dynamic> route) => false,
+              );
                 }
               },
               style: ElevatedButton.styleFrom(
