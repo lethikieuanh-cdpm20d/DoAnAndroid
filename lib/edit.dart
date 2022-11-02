@@ -16,37 +16,48 @@ class editScreen extends StatelessWidget{
         ),
         backgroundColor: const Color.fromARGB(255, 17, 224, 93),
       ),
+      body: Column(
+        children: [
+          Card(
+            child: Container(
+              child: const Text('Lợi là con chó',
+              style: TextStyle(color: Colors.pink),),
+            ),
+          )
+        ],
+
+      ),
    );
   }
 }
 
-class ContactTab extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    return ContactTabState();
-  }
-}
+// class ContactTab extends StatefulWidget{
+//   @override
+//   State<StatefulWidget> createState() {
+//     return ContactTabState();
+//   }
+// }
 
-class ContactTabState extends State<ContactTab>{
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(5),
-      child: ListView(
-        children: [
-          Card(
-            child: ListTile(
-              leading: CircleAvatar(
-                child: Text('N'),
-              ),
-              title: Text('Tên:'),
-              subtitle: Text(''),
-              trailing: null,
-            ),
-          )
-        ],
-      ),
-    );
-  }
+// class ContactTabState extends State<ContactTab>{
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       padding: EdgeInsets.all(5),
+//       child: ListView(
+//         children: [
+//           Card(
+//             child: ListTile(
+//               leading: CircleAvatar(
+//                 child: Text('N'),
+//               ),
+//               title: Text('Tên:'),
+//               subtitle: Text(''),
+//               trailing: null,
+//             ),
+//           )
+//         ],
+//       ),
+//     );
+//   }
 
-}
+// }
