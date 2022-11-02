@@ -155,6 +155,7 @@ class personalScreen extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.all(90),
+            
             child: buttunSection,
           ),
         ],
