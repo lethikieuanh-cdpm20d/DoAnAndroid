@@ -15,7 +15,7 @@ class DoanApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ListFriend(),
+      home: StartApp(),
     );
   }
 }
