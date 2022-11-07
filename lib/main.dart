@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_application_1/category.dart';
 import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/listfriend.dart';
 import 'package:flutter_application_1/search.dart';
+
 import 'package:flutter_application_1/start.dart';
-import 'package:flutter_application_1/login.dart';
-import 'package:flutter_application_1/personal.dart';
+
 
 void main() => runApp(DoanApp());
 
@@ -15,7 +16,7 @@ class DoanApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: StartApp(),
+      home:  StartApp (),
     );
   }
 }

@@ -7,6 +7,7 @@ class searchSreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
+
         title: Row(
           children: [
             const Expanded(
@@ -22,7 +23,9 @@ class searchSreen extends StatelessWidget {
             IconButton(onPressed: () {}, icon: const Icon(Icons.clear))
           ],
         ),
+        
       ),
-    );
+      );
+    
   }
 }
