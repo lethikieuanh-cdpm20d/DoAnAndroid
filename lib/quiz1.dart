@@ -256,7 +256,7 @@ class Quiz1State extends State<Quiz1> {
                     finalScore = 0;
                     questionNumber = 0;
                   },
-                  child: Text(
+                  child: const Text(
                     'Quit',
                     style: TextStyle(
                       fontSize: 18,
