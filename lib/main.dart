@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_application_1/category.dart';
+import 'package:flutter_application_1/edit.dart';
 import 'package:flutter_application_1/history_screen.dart';
 import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/listfriend.dart';
+import 'package:flutter_application_1/personal.dart';
 import 'package:flutter_application_1/search.dart';
 import 'package:flutter_application_1/start.dart';
 
