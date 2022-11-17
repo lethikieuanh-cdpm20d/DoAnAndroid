@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/listfriend.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/personal.dart';
+import 'package:flutter_application_1/rank.dart';
 import 'package:flutter_application_1/search.dart';
 import 'package:flutter_application_1/start.dart';
 import 'login.dart';
@@ -111,7 +113,8 @@ class homepageScreenState extends State<homepageScreenHome> {
               ),
               title: const Text('Bạn bè'),
               onTap: () {
-                Navigator.pop(context);
+                 Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => ListFriend()));
               },
             ),
             ListTile(
@@ -121,7 +124,8 @@ class homepageScreenState extends State<homepageScreenHome> {
               ),
               title: const Text('Bảng xếp hạng'),
               onTap: () {
-                Navigator.pop(context);
+              Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => rankSreen()));
               },
             ),
             ListTile(

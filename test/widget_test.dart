@@ -6,15 +6,10 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-//import 'package:flutter_application_1/gamescreen.dart';
-=======
->>>>>>> d76dd285cc6fa233f0f46762fd57a566182f9663
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+// ignore: unused_import
 import 'package:flutter_application_1/start.dart';
-
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.

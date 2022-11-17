@@ -53,7 +53,7 @@ class Quiz1State extends State<Quiz1> {
                 alignment: Alignment.centerRight,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
+                  children: [ 
                     Text(
                       'Câu ${questionNumber + 1}',
                       style: TextStyle(
