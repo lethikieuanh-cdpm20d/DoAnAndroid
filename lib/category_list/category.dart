@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/categoryregime.dart';
+import 'package:flutter_application_1/category_list/categoryregime_IQ.dart';
+import 'package:flutter_application_1/category_list/categoryregime_environment.dart';
+import 'package:flutter_application_1/category_list/categoryregime_happy.dart';
+import 'package:flutter_application_1/category_list/categoryregime_healthy.dart';
+import 'package:flutter_application_1/category_list/categoryregime_history.dart';
+import 'package:flutter_application_1/category_list/categoryregime_music.dart';
+import 'package:flutter_application_1/category_list/categoryregime_ocean.dart';
+import 'package:flutter_application_1/category_list/categoryregime_plant.dart';
+import 'package:flutter_application_1/category_list/categoryregime_rivers.dart';
 
 class categoryScreen extends StatelessWidget {
   @override
@@ -11,22 +19,23 @@ class categoryScreen extends StatelessWidget {
             return Column(children: [
               Card(
                 child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
-                    },
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.only(bottom: 5),
-                          child: Image.asset('images/iq.png',
-                              width: 500, height: 100, fit: BoxFit.fill),
-                        ),
-                        const Text('Câu hỏi IQ'),
-                      ],
-                    )),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => categoryRegimeScrennIQ()));
+                  },
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(bottom: 5),
+                        child: Image.asset('images/iq.png',
+                            width: 500, height: 100, fit: BoxFit.fill),
+                      ),
+                      const Text('Câu hỏi IQ'),
+                    ],
+                  ),
+                ),
               ),
               Card(
                 child: TextButton(
@@ -34,7 +43,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennMusic()));
                     },
                     child: Column(
                       children: [
@@ -53,7 +63,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennHappy()));
                     },
                     child: Column(
                       children: [
@@ -72,7 +83,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennHealthy()));
                     },
                     child: Column(
                       children: [
@@ -91,7 +103,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennHistory()));
                     },
                     child: Column(
                       children: [
@@ -110,7 +123,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennEnviroment()));
                     },
                     child: Column(
                       children: [
@@ -129,7 +143,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennOcean()));
                     },
                     child: Column(
                       children: [
@@ -148,7 +163,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennRivers()));
                     },
                     child: Column(
                       children: [
@@ -167,7 +183,8 @@ class categoryScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => categoryRegimeScrenn()));
+                              builder: (context) =>
+                                  categoryRegimeScrennPlant()));
                     },
                     child: Column(
                       children: [
@@ -184,6 +201,4 @@ class categoryScreen extends StatelessWidget {
           }),
     );
   }
-  }
-
-
+}
