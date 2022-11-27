@@ -1,23 +1,37 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-import 'package:flutter_application_1/category.dart';
-import 'package:flutter_application_1/edit.dart';
-import 'package:flutter_application_1/history_screen.dart';
 import 'package:flutter_application_1/homepage.dart';
-import 'package:flutter_application_1/listfriend.dart';
-import 'package:flutter_application_1/personal.dart';
-import 'package:flutter_application_1/search.dart';
+
 import 'package:flutter_application_1/start.dart';
 
-void main() => runApp(DoanApp());
+void main() async {
+  // var db = DBconnect();
+  // db.addQuestionMedium(Question(id: '1', title: '2/2=?', options: {
+  //   '1': true,
+  //   '12': false,
+  //   '13': false,
+  //   '14': false,
+  // }));
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(DoanApp());
+}
 
 class DoanApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: StartApp(),
+      initialRoute:
+          FirebaseAuth.instance.currentUser == 'null' ? 'home' : 'welcome',
+      routes: {
+        'welcome': (context) => StartApp(),
+        'home': (context) => homepageScreeen(),
+      },
     );
   }
 }

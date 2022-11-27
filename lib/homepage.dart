@@ -1,10 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/personal.dart';
 import 'package:flutter_application_1/search.dart';
 import 'package:flutter_application_1/start.dart';
 import 'login.dart';
-import 'category.dart';
+import 'category_list/category.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class homepageScreeen extends StatelessWidget {
@@ -57,6 +59,7 @@ class homepageScreenState extends State<homepageScreenHome> {
                 actions: [
                   TextButton(
                     onPressed: () {
+                      FirebaseAuth.instance.signOut();
                       Navigator.pop(context, true);
                     },
                     child: const Text('Yes'),

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/quiz1.dart';
-import 'package:flutter_application_1/quizdifficult.dart';
-import 'package:flutter_application_1/quizmedium.dart';
+import 'package:flutter_application_1/home_quiz_IQ/home_quiz.dart';
 
-class categoryRegimeScrenn extends StatelessWidget {
+class categoryRegimeScrennMusic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +26,7 @@ class categoryRegimeScrenn extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Quiz1(),
+                      builder: (context) => QuizEasy(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -65,7 +63,7 @@ class categoryRegimeScrenn extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizMedium(),
+                      builder: (context) => QuizEasy(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -102,7 +100,7 @@ class categoryRegimeScrenn extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizDifficult(),
+                      builder: (context) => QuizEasy(),
                     ));
               },
               style: TextButton.styleFrom(

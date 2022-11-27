@@ -1,11 +1,59 @@
 
-
-
 import 'package:flutter/material.dart';
 
 class editScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    Widget editForm = Form(child:
+    Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          child: TextFormField(
+            decoration: InputDecoration(
+            icon: Icon(Icons.person),
+            hintText: 'Tên thay đổi ',
+            labelText: 'Tên hiển thị',
+          ),
+          ),
+          
+        ),
+        Container(
+          child: TextFormField(
+            decoration: InputDecoration(
+            icon: Icon(Icons.email_outlined),
+            hintText: 'Thay đổi email',
+            labelText: 'Email',
+          ),
+          ),
+        ),
+        Container(
+          child: TextFormField(
+            decoration: InputDecoration(  
+            icon: Icon(Icons.calendar_today),
+            hintText: 'Thay đổi ngày sinh',
+            labelText: 'Ngày sinh'
+          )
+        ),
+        ),
+        Container(
+          child: TextFormField(
+            decoration: InputDecoration(  
+            icon: Icon(Icons.password_outlined),
+            hintText: 'Thay đổi mật khẩu',
+            labelText: 'Mật Khẩu'
+          )
+        ),
+        ),
+         Container(
+          padding: const EdgeInsets.only(left: 50.0, top: 40.0),
+          child: const ElevatedButton(
+            child: Text('Lưu'),
+            onPressed: null,
+          ),
+        )
+      ],
+    ));
    return Scaffold(
       appBar: AppBar(
         centerTitle: true,//căn giữa
@@ -18,46 +66,12 @@ class editScreen extends StatelessWidget{
       ),
       body: Column(
         children: [
-          Card(
-            child: Container(
-              child: const Text('Lợi là con chó',
-              style: TextStyle(color: Colors.pink),),
-            ),
+          Container(
+            child: editForm,
           )
         ],
-
       ),
    );
   }
 }
-
-// class ContactTab extends StatefulWidget{
-//   @override
-//   State<StatefulWidget> createState() {
-//     return ContactTabState();
-//   }
-// }
-
-// class ContactTabState extends State<ContactTab>{
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: EdgeInsets.all(5),
-//       child: ListView(
-//         children: [
-//           Card(
-//             child: ListTile(
-//               leading: CircleAvatar(
-//                 child: Text('N'),
-//               ),
-//               title: Text('Tên:'),
-//               subtitle: Text(''),
-//               trailing: null,
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-
-// }
+ 

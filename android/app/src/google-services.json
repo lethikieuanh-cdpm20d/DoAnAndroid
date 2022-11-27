@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "926765086813",
+    "project_id": "tracnghiemapp-d86b1",
+    "storage_bucket": "tracnghiemapp-d86b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926765086813:android:f8a6c6091415333c2e35b4",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926765086813-cd1rpu2o9gh06ktqqtheov3ejfoudmh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANX0_yD9HFjDYAtqkZbv_c9DLJnRGAQKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926765086813-cd1rpu2o9gh06ktqqtheov3ejfoudmh4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
