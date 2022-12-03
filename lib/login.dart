@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/signup.dart';
 
 import 'forget.dart';
-import 'homepage.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -17,6 +16,7 @@ class LoginScreenState extends State<LoginScreen> {
   TextEditingController txtPass = TextEditingController();
   bool _isObscure = true;
   final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +41,7 @@ class LoginScreenState extends State<LoginScreen> {
                     child: TextField(
                       keyboardType: TextInputType.emailAddress,
                       controller: txtUserName,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                       ),
                       decoration: InputDecoration(
@@ -69,7 +69,7 @@ class LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.all(15),
                     child: TextField(
                       controller: txtPass,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                       ),
                       obscureText: _isObscure,

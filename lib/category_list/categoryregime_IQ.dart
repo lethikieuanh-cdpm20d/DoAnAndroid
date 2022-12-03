@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_quiz_IQ/home_quiz.dart';
-import 'package:flutter_application_1/home_quiz_IQ/home_quiz_difficult.dart';
-import 'package:flutter_application_1/home_quiz_IQ/home_quiz_medium.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz_difficult.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz_medium.dart';
 
 class categoryRegimeScrennIQ extends StatelessWidget {
   @override

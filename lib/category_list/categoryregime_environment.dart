@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_environment/home_quiz_difficult_enviroment.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_environment/home_quiz_enviroment.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_environment/home_quiz_medium_enviroment.dart';
 
 class categoryRegimeScrennEnviroment extends StatelessWidget {
   @override
@@ -26,7 +28,7 @@ class categoryRegimeScrennEnviroment extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizEasyEnviroment(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -63,7 +65,7 @@ class categoryRegimeScrennEnviroment extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizMediumEnviroment(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -100,7 +102,7 @@ class categoryRegimeScrennEnviroment extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizDifficultEnviroment(),
                     ));
               },
               style: TextButton.styleFrom(

@@ -1,0 +1,31 @@
+import 'package:http/http.dart' as http;
+import '../../widget/question_model.dart';
+import 'dart:convert';
+
+class DBconnectEasyEnviroment {
+  final url = Uri.parse(
+      'https://tracnghiemapp-d86b1-default-rtdb.firebaseio.com/questionseasyenviroment.json');
+  // Future<void> addQuestions(Question question) async {
+  //   http.post(url,
+  //       body: json.encode({
+  //         'title': question.title,
+  //         'options': question.options,
+  //       }));
+  // }
+
+  Future<List<Question>> fedchQuestions() async {
+    return http.get(url).then((response) {
+      var data = json.decode(response.body) as Map<String, dynamic>;
+      List<Question> newQuestions = [];
+      data.forEach(((key, value) {
+        var newQuestion = Question(
+          id: key,
+          title: value['title'],
+          options: Map.castFrom(value['options']),
+        );
+        newQuestions.add(newQuestion);
+      }));
+      return newQuestions;
+    });
+  }
+}

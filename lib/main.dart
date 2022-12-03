@@ -7,13 +7,6 @@ import 'package:flutter_application_1/homepage.dart';
 import 'package:flutter_application_1/start.dart';
 
 void main() async {
-  // var db = DBconnect();
-  // db.addQuestionMedium(Question(id: '1', title: '2/2=?', options: {
-  //   '1': true,
-  //   '12': false,
-  //   '13': false,
-  //   '14': false,
-  // }));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(DoanApp());
