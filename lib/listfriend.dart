@@ -6,13 +6,13 @@ class ListFriend extends StatefulWidget {
 }
 
 class _ListFriendState extends State<ListFriend> {
-  Widget appBarTitle = Text(
+  Widget appBarTitle = const Text(
     'Bạn Bè',
     style: TextStyle(
       fontSize: 35,
     ),
   );
-  Icon actionIcon = Icon(
+  Icon actionIcon = const Icon(
     Icons.person_add,
     size: 35,
   );
@@ -59,21 +59,21 @@ class _ListFriendState extends State<ListFriend> {
             ),
             Card(
               child: ListTile(
-                leading: CircleAvatar(
+                leading: const CircleAvatar(
                   child: Text('P'),
                 ),
-                title: Text('Quang Phuc'),
-                subtitle: Text('Nguoi choi dang hoat dong'),
+                title: const Text('Quang Phuc'),
+                subtitle: const Text('Nguoi choi dang hoat dong'),
                 trailing: _PopupMenu(),
               ),
             ),
             Card(
               child: ListTile(
-                leading: CircleAvatar(
+                leading: const CircleAvatar(
                   child: Text('Q'),
                 ),
-                title: Text('Duc Quyen'),
-                subtitle: Text('Nguoi choi dang hoat dong'),
+                title: const Text('Duc Quyen'),
+                subtitle: const Text('Nguoi choi dang hoat dong'),
                 trailing: _PopupMenu(),
               ),
             ),
@@ -86,32 +86,32 @@ class _ListFriendState extends State<ListFriend> {
 
 Widget _PopupMenu() {
   return PopupMenuButton(
-      icon: Icon(Icons.more_vert),
+      icon: const Icon(Icons.more_vert),
       itemBuilder: (context) => [
             PopupMenuItem(
               child: ListTile(
-                leading: Icon(Icons.whatshot_rounded),
-                title: Text(
+                leading: const Icon(Icons.whatshot_rounded),
+                title: const Text(
                   'Mời Thách đấu',
                   style: TextStyle(),
                 ),
-                subtitle: Text('Thách đấu '),
+                subtitle: const Text('Thách đấu '),
                 onTap: () {},
               ),
             ),
             PopupMenuItem(
               child: ListTile(
-                leading: Icon(Icons.delete),
-                title: Text('Xóa Bạn bè'),
-                subtitle: Text('Xóa'),
+                leading: const Icon(Icons.delete),
+                title: const Text('Xóa Bạn bè'),
+                subtitle: const Text('Xóa'),
                 onTap: () {},
               ),
             ),
             PopupMenuItem(
               child: ListTile(
-                leading: Icon(Icons.block),
-                title: Text('Chặn bạn bè'),
-                subtitle: Text('Chặn'),
+                leading: const Icon(Icons.block),
+                title: const Text('Chặn bạn bè'),
+                subtitle: const Text('Chặn'),
                 onTap: () {},
               ),
             ),

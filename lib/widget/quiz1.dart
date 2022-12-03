@@ -11,14 +11,14 @@ class QuestionWidget extends StatelessWidget {
 
   final String question;
   final int indexAction;
-  final totalQuestion;
+  final int totalQuestion;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.centerLeft,
       child: Text(
-        'Quetion ${indexAction + 1}/$totalQuestion: $question',
+        'Quetion ${indexAction + 1} / $totalQuestion: $question',
         style: const TextStyle(
           color: neutral,
           fontSize: 24,

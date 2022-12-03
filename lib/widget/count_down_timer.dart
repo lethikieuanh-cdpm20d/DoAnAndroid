@@ -43,17 +43,17 @@ class _OtpTimerState extends State<OtpTimer> {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Icon(
+        const Icon(
           Icons.timer,
           color: Color.fromARGB(255, 158, 67, 35),
           size: 30,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Text(
           timerText,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
             color: Color.fromARGB(255, 158, 67, 35),
           ),

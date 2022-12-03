@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class forgetScreen extends StatelessWidget {
+  TextEditingController _emailreset = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +39,7 @@ class forgetScreen extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(15),
                       child: TextField(
+                        controller: _emailreset,
                         style: TextStyle(
                           color: Colors.black,
                         ),
@@ -62,54 +65,21 @@ class forgetScreen extends StatelessWidget {
                       ),
                     ),
                     Container(
-                        padding: const EdgeInsets.only(
-                          right: 60,
-                        ),
-                        child: const Text(
-                          'Vui lòng điền tên email bạn sử dụng để đăng ký',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        )),
-                    Container(
-                      padding: const EdgeInsets.all(15),
-                      child: TextField(
-                        keyboardType: TextInputType.emailAddress,
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                          labelStyle: const TextStyle(color: Colors.green),
-                          border: const OutlineInputBorder(),
-                          prefixIcon: const Icon(
-                            Icons.email,
-                            color: Colors.green,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            borderSide: const BorderSide(
-                              color: Colors.green,
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Color.fromARGB(255, 46, 107, 48)),
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
-                      ),
-                    ),
-                    Container(
                       padding: const EdgeInsets.all(15),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          FirebaseAuth.instance
+                              .sendPasswordResetEmail(email: _emailreset.text)
+                              .then((value) => Navigator.of(context).pop());
+                        },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromARGB(255, 14, 234, 76),
-                            minimumSize: const Size(200, 50),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            )),
+                          backgroundColor:
+                              const Color.fromARGB(255, 14, 234, 76),
+                          minimumSize: const Size(200, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
                         child: const Text(
                           'Xác nhận',
                         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_quiz_IQ/home_quiz.dart';
-import 'package:flutter_application_1/home_quiz_history/home_quiz_difficult_history.dart';
-import 'package:flutter_application_1/home_quiz_history/home_quiz_easy_history.dart';
-import 'package:flutter_application_1/home_quiz_history/home_quiz_medium_history.dart';
+
+import 'package:flutter_application_1/home_quiz/home_quiz_history/home_quiz_difficult_history.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_history/home_quiz_easy_history.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_history/home_quiz_medium_history.dart';
 
 class categoryRegimeScrennHistory extends StatelessWidget {
   @override

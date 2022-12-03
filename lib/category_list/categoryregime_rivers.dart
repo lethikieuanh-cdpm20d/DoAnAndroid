@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz.dart';
 
 class categoryRegimeScrennRivers extends StatelessWidget {
   @override
