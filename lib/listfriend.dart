@@ -36,7 +36,7 @@ class _ListFriendState extends State<ListFriend> {
           children: [
             TextField(
               decoration: InputDecoration(
-                labelText: 'Tim kiem',
+                labelText: 'Tìm Kiếm',
                 labelStyle: const TextStyle(
                   color: Colors.green,
                 ),

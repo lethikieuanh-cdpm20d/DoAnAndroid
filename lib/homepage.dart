@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/listfriend.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/personal.dart';
+import 'package:flutter_application_1/rank.dart';
 import 'package:flutter_application_1/search.dart';
-import 'package:flutter_application_1/start.dart';
-import 'login.dart';
-import 'category_list/category.dart';
+
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class homepageScreeen extends StatelessWidget {
@@ -49,6 +49,7 @@ class homepageScreenState extends State<homepageScreenHome> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
+
         onWillPop: () async {
           final shouldPop = await showDialog<bool>(
             context: context,
@@ -71,6 +72,128 @@ class homepageScreenState extends State<homepageScreenHome> {
                     child: const Text('No'),
                   ),
                 ],
+
+      onWillPop: ()async{
+        final shouldPop = await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Thoát khỏi ứng dụng?'),
+              actionsAlignment: MainAxisAlignment.spaceBetween,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                  },
+                  child: const Text('Yes'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, false);
+                  },
+                  child: const Text('No'),
+                ),
+              ],
+            );
+          },
+        );
+        return shouldPop!;
+      },
+      child: Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children:[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 17, 224, 93),
+              ),
+              child: CircleAvatar(
+              child: Text(
+                'HN',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+            ),
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.person,
+                color: Colors.green,
+              ),
+              title: const Text('Thông tin tài khoản'),
+              onTap: () {
+                //Navigator.pop(context);
+                 Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => personalScreen()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.person,
+                color: Colors.blue,
+              ),
+              title: const Text('Bạn bè'),
+              onTap: () {
+                 Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => ListFriend()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.insert_chart_outlined,
+                color: Colors.orange,
+              ),
+              title: const Text('Bảng xếp hạng'),
+              onTap: () {
+              Navigator.push(context,
+                     MaterialPageRoute(builder: (context) => rankSreen()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.map,
+                color: Colors.red,
+              ),
+              title: const Text('Checking'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.camera,
+                color: Colors.lightBlue,
+              ),
+              title: const Text('Camera'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+             ListTile(
+              leading: const Icon(
+                Icons.output_rounded,
+                color: Colors.red,
+              ),
+              title: const Text('Đăng xuất',style: TextStyle(color: Colors.red),),
+              onTap: () {
+                showDialog(context: context, builder: (context){
+                  return AlertDialog(
+                    title: const Text('Đăng xuất khỏi ứng dụng?'),
+                    icon: Icon(Icons.notifications),
+              actionsAlignment: MainAxisAlignment.spaceBetween,
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                    Navigator.pushAndRemoveUntil<void>(
+                context,
+                MaterialPageRoute<void>(
+                  // ignore: prefer_const_constructors
+                  builder: (BuildContext context) => LoginScreen(),
+                ),
+                (Route<dynamic> route) => false,
+              ]
               );
             },
           );
@@ -231,8 +354,8 @@ class homepageScreenState extends State<homepageScreenHome> {
               }),
         ));
   }
-}
 
+        }}}
 class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -253,3 +376,4 @@ class Challenge extends StatelessWidget {
     return const Center(child: Text("Coming Soon"));
   }
 }
+      
