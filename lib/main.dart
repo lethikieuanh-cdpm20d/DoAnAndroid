@@ -25,6 +25,7 @@ class DoanApp extends StatelessWidget {
         'welcome': (context) => StartApp(),
         'home': (context) => homepageScreeen(),
       },
+      home: StartApp(),
     );
   }
 }

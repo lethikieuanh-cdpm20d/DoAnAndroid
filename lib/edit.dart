@@ -46,7 +46,7 @@ class editScreen extends StatelessWidget{
         ),
         ),
          Container(
-          padding: const EdgeInsets.only(left: 50.0, top: 40.0),
+          padding: const EdgeInsets.only(left: 20.0, top: 40.0),
           child: const ElevatedButton(
             child: Text('Lưu'),
             onPressed: null,
