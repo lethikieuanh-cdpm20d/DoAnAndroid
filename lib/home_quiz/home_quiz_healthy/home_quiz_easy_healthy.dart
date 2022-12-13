@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/db_connect/db_connect_healthy/db_connect_healthy.dart';
 import '../../widget/question_model.dart';
@@ -36,6 +38,27 @@ class _QuizEasyState extends State<QuizEasyHealthy> {
   bool isPressed = false;
   bool isAlreadySelected = false;
 
+  @override
+  void dispose() {
+    timer!.cancel();
+    super.dispose();
+  }
+
+  int seconds = 20;
+  Timer? timer;
+
+  StarTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          timer.cancel();
+        }
+      });
+    });
+  }
+
   void nextQuestion(int questionLength) {
     if (index == questionLength - 1) {
       showDialog(
@@ -46,17 +69,24 @@ class _QuizEasyState extends State<QuizEasyHealthy> {
                 questionLength: questionLength,
                 onPressed: startOver,
               ));
+      timer!.cancel();
     } else {
       if (isPressed) {
         setState(() {
           index++;
           isPressed = false;
           isAlreadySelected = false;
+          timer!.cancel();
+          seconds = 20;
+          StarTimer();
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Xin Hãy chọn câu trả lời !!'),
+            content: Text(
+              'Xin Hãy chọn câu trả lời !!',
+              style: TextStyle(color: Colors.red),
+            ),
             behavior: SnackBarBehavior.floating,
             margin: EdgeInsets.symmetric(horizontal: 20),
           ),
@@ -85,6 +115,8 @@ class _QuizEasyState extends State<QuizEasyHealthy> {
       score = 0;
       isPressed = false;
       isAlreadySelected = false;
+      seconds = 20;
+      StarTimer();
     });
     Navigator.pop(context);
   }
@@ -118,12 +150,32 @@ class _QuizEasyState extends State<QuizEasyHealthy> {
                   Padding(
                     padding: const EdgeInsets.all(18),
                     child: Text(
-                      'Score: $score',
+                      'Điểm: $score',
                       style: const TextStyle(
                         fontSize: 18,
                       ),
                     ),
-                  )
+                  ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Text(
+                        '$seconds',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: CircularProgressIndicator(
+                          value: seconds / 20,
+                          valueColor: const AlwaysStoppedAnimation(Colors.red),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
               body: Container(

@@ -1,4 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/invite.dart';
+
+import 'package:flutter_application_1/listfriend.dart';
+import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/profile_Screen/profile_screen.dart';
+import 'package:flutter_application_1/rank.dart';
+import 'package:flutter_application_1/search.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +19,7 @@ import 'package:flutter_application_1/search.dart';
 import 'package:flutter_application_1/signup.dart';
 import 'package:flutter_application_1/start.dart';
 import 'login.dart';
+
 import 'category_list/category.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
@@ -93,7 +104,7 @@ class homepageScreenState extends State<homepageScreenHome> {
                     child: Text(
                       'HN',
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -118,7 +129,11 @@ class homepageScreenState extends State<homepageScreenHome> {
                   ),
                   title: const Text('Bạn bè'),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ListFriend(),
+                        ));
                   },
                 ),
                 ListTile(
@@ -225,7 +240,7 @@ class homepageScreenState extends State<homepageScreenHome> {
               backgroundColor: const Color.fromARGB(255, 17, 224, 93),
               // ignore: prefer_const_literals_to_create_immutables
               items: [
-                const TabItem(icon: Icons.list, title: 'Chủ đề'),
+                TabItem(icon: Icons.list, title: 'Chủ đề'),
                 TabItem(icon: Icons.house, title: '            '),
                 TabItem(icon: Icons.gamepad_outlined, title: 'Thách đấu'),
               ],
@@ -240,7 +255,7 @@ class homepageScreenState extends State<homepageScreenHome> {
 class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("Coming Soon"));
+    return rankSreen();
   }
 }
 
@@ -254,6 +269,10 @@ class MyCategorys extends StatelessWidget {
 class Challenge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    return InviteChallengeScreen();
+
     return signupScreen();
+
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_music/home_quiz_difficult_music.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_music/home_quiz_easy_music.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_music/home_quiz_medium_music.dart';
 
 class categoryRegimeScrennMusic extends StatelessWidget {
   @override
@@ -26,7 +29,7 @@ class categoryRegimeScrennMusic extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizEasyMusic(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -63,7 +66,7 @@ class categoryRegimeScrennMusic extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizMediumMusic(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -100,7 +103,7 @@ class categoryRegimeScrennMusic extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizDifficultMusic(),
                     ));
               },
               style: TextButton.styleFrom(

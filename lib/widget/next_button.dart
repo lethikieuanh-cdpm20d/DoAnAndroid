@@ -7,6 +7,8 @@ class NextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
+      height: 50,
       width: double.infinity,
       decoration: BoxDecoration(
         color: neutral,
@@ -14,7 +16,7 @@ class NextButton extends StatelessWidget {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: const Text(
-        'Next Question',
+        'Câu hỏi tiếp theo ',
         style: TextStyle(
           fontSize: 30,
           color: Colors.black,

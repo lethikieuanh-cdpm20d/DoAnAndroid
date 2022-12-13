@@ -26,7 +26,7 @@ class ResultBox extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const Text(
-                'Score',
+                'Điểm',
                 style: TextStyle(
                   color: neutral,
                   fontSize: 20,
@@ -54,7 +54,7 @@ class ResultBox extends StatelessWidget {
               ),
               Text(
                 result == questionLength / 2
-                    ? 'Almost There'
+                    ? 'Hay lắm bạn ơi!'
                     : result < questionLength / 2
                         ? 'Chơi lại ?'
                         : 'Tuyệt Vời',
@@ -89,7 +89,7 @@ class ResultBox extends StatelessWidget {
                   );
                 },
                 child: const Text(
-                  'Quit',
+                  'Thoát',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.blue,

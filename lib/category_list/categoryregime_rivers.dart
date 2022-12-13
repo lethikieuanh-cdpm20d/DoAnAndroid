@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_rivers/home_quiz_difficult_rivers.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_rivers/home_quiz_easy_rivers.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_rivers/home_quiz_medium_rivers.dart';
 
 class categoryRegimeScrennRivers extends StatelessWidget {
   @override
@@ -26,7 +29,7 @@ class categoryRegimeScrennRivers extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizEasyRivers(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -63,7 +66,7 @@ class categoryRegimeScrennRivers extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizMediumRivers(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -100,7 +103,7 @@ class categoryRegimeScrennRivers extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizDifficultRivers(),
                     ));
               },
               style: TextButton.styleFrom(

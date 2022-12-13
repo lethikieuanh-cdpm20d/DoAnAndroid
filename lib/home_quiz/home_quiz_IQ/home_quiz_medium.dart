@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/db_connect/db_connect_IQ/db_connect_medium_IQ.dart';
 
@@ -27,16 +29,38 @@ class _QuizMediumState extends State<QuizMediumIQ> {
     return db.fetchQuestions();
   }
 
-  @override
-  void initState() {
-    _question = getData();
-    super.initState();
-  }
-
   int index = 0;
   int score = 0;
   bool isPressed = false;
   bool isAlreadySelected = false;
+
+  @override
+  void initState() {
+    _question = getData();
+    StarTimer();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer!.cancel();
+    super.dispose();
+  }
+
+  int seconds = 20;
+  Timer? timer;
+
+  StarTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          timer.cancel();
+        }
+      });
+    });
+  }
 
   void nextQuestion(int questionLength) {
     if (index == questionLength - 1) {
@@ -48,17 +72,24 @@ class _QuizMediumState extends State<QuizMediumIQ> {
                 questionLength: questionLength,
                 onPressed: startOver,
               ));
+      timer!.cancel();
     } else {
       if (isPressed) {
         setState(() {
           index++;
           isPressed = false;
           isAlreadySelected = false;
+          timer!.cancel();
+          seconds = 20;
+          StarTimer();
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('Xin Hãy chọn câu trả lời !!'),
+            content: Text(
+              'Xin Hãy chọn câu trả lời !!',
+              style: TextStyle(color: Colors.red),
+            ),
             behavior: SnackBarBehavior.floating,
             margin: EdgeInsets.symmetric(horizontal: 20),
           ),
@@ -120,12 +151,32 @@ class _QuizMediumState extends State<QuizMediumIQ> {
                   Padding(
                     padding: const EdgeInsets.all(18),
                     child: Text(
-                      'Score: $score',
+                      'Điểm: $score',
                       style: const TextStyle(
                         fontSize: 18,
                       ),
                     ),
-                  )
+                  ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Text(
+                        '$seconds',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: CircularProgressIndicator(
+                          value: seconds / 20,
+                          valueColor: const AlwaysStoppedAnimation(Colors.red),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
               body: Container(
