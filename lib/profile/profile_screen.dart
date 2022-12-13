@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +5,6 @@ import 'package:flutter_application_1/homepage.dart';
 
 import 'package:flutter_application_1/profile/UserObject.dart';
 import 'package:flutter_application_1/profile/edit.dart';
-
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -63,7 +61,7 @@ class ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 132, 235, 151),
         appBar: AppBar(
-          backgroundColor:Color.fromARGB(255, 17, 224, 93),
+          backgroundColor: Color.fromARGB(255, 17, 224, 93),
           title: Text(
             'Thông tin cá nhân',
             style: TextStyle(fontSize: 25),
@@ -74,7 +72,7 @@ class ProfileScreenState extends State<ProfileScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.only( top: 50),
+              margin: EdgeInsets.only(top: 50),
               child: ClipOval(
                 child: Image.asset(
                   'images/person.png',
@@ -84,16 +82,19 @@ class ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            Container(alignment: Alignment.center,
-             margin: const EdgeInsets.only(top: 50),
+            Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 50),
               child: Text(
                 'Name: ' + Ten(),
                 style: TextStyle(
-                    fontSize: 30, color: Color.fromARGB(255, 240, 7, 127),
+                    fontSize: 30,
+                    color: Color.fromARGB(255, 240, 7, 127),
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Container(alignment: Alignment.center,
+            Container(
+              alignment: Alignment.center,
               margin: const EdgeInsets.only(top: 30, left: 20),
               child: Text(
                 'Email: ${Mail()}',
@@ -101,8 +102,9 @@ class ProfileScreenState extends State<ProfileScreen> {
                     fontSize: 25, color: Color.fromARGB(255, 240, 7, 127)),
               ),
             ),
-            Container(alignment: Alignment.center,
-             //margin: const EdgeInsets.only(top: 80),
+            Container(
+              alignment: Alignment.center,
+              //margin: const EdgeInsets.only(top: 80),
               child: Text(
                 'Điểm: ' "1000",
                 style: TextStyle(
@@ -127,13 +129,13 @@ class ProfileScreenState extends State<ProfileScreen> {
                 child: Text('Sửa', style: TextStyle(fontSize: 28)),
                 onPressed: () {
                   Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => EditprofileScreen()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EditprofileScreen()));
                 },
               ),
             ),
-             Container(
+            Container(
               width: 200,
               height: 50,
               margin: const EdgeInsets.only(top: 30),
@@ -148,12 +150,13 @@ class ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                 ),
-                child: Text('Quay về trang chủ', style: TextStyle(fontSize: 20)),
+                child: const Text('Quay về trang chủ',
+                    style: TextStyle(fontSize: 20)),
                 onPressed: () {
                   Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => homepageScreeen()));
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => homepageScreeen()));
                 },
               ),
             ),

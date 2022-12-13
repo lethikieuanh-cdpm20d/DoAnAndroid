@@ -1,4 +1,3 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:firebase_database/firebase_database.dart';
@@ -174,31 +173,29 @@ class EditprofileScreenState extends State<EditprofileScreen> {
                         ref.child(lsUser[i].uid).update({
                           'name': txtname.text,
                         });
+                      } else if (txtname.text == '') {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: const Text(
+                                  'THÔNG BÁO',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                content: Text('Mời nhập tên <3'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('OK'),
+                                  ),
+                                ],
+                              );
+                            });
                       }
-                      else if (txtname.text == '')
-                    {
-                         showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: const Text(
-                              'THÔNG BÁO',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            content: Text('Mời nhập tên <3'),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text('OK'),
-                              ),
-                            ],
-                          );
-                        });
                     }
-                    } 
-                    
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-<<<<<<< HEAD
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/invite.dart';
@@ -10,30 +9,6 @@ import 'package:flutter_application_1/rank.dart';
 import 'package:flutter_application_1/search.dart';
 
 import 'package:flutter_application_1/profile/profile_screen.dart';
-
-=======
-
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/invite.dart';
-
-import 'package:flutter_application_1/listfriend.dart';
-import 'package:flutter_application_1/login.dart';
-import 'package:flutter_application_1/profile_Screen/profile_screen.dart';
-import 'package:flutter_application_1/rank.dart';
-import 'package:flutter_application_1/search.dart';
-
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-
-import 'package:flutter_application_1/login.dart';
-import 'package:flutter_application_1/profile/profile_screen.dart';
-
-import 'package:flutter_application_1/search.dart';
-import 'package:flutter_application_1/signup.dart';
-import 'package:flutter_application_1/start.dart';
-import 'login.dart';
-
->>>>>>> 73976811cb7b0568b277f77ebf2d0e6302955ead
 import 'category_list/category.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
@@ -283,14 +258,6 @@ class MyCategorys extends StatelessWidget {
 class Challenge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return InviteChallengeScreen();
-=======
-
-    return InviteChallengeScreen();
-
-    return signupScreen();
-
->>>>>>> 73976811cb7b0568b277f77ebf2d0e6302955ead
   }
 }
