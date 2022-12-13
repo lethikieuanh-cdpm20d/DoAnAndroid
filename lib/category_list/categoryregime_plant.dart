@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_plant/home_quiz_difficult_plant.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_plant/home_quiz_easy_plant.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_plant/home_quiz_medium_plant.dart';
 
 class categoryRegimeScrennPlant extends StatelessWidget {
   @override
@@ -26,7 +29,7 @@ class categoryRegimeScrennPlant extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizEasyPlant(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -63,7 +66,7 @@ class categoryRegimeScrennPlant extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizMediumPlant(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -100,7 +103,7 @@ class categoryRegimeScrennPlant extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizDifficultPlant(),
                     ));
               },
               style: TextButton.styleFrom(

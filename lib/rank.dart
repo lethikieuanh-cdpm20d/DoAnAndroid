@@ -1,29 +1,8 @@
 import 'package:flutter/material.dart';
 
 class rankSreen extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
-    // Widget title = Container(
-    //  decoration: BoxDecoration(
-    //    image: DecorationImage(
-    //         image: AssetImage('images/rating.png'), fit: BoxFit.contain),
-    //   ),
-    //   child: Row(
-    //     children: [
-    //       Container(
-    //          child: const CircleAvatar(
-    //           radius: 30,
-    //           child: Image(
-    //             image: AssetImage('images/login.png'),
-    //             fit: BoxFit.cover,
-    //           ),
-    //         ),
-    //       ),
-       
-    //     ],
-    //   ),
-    // );
     Widget ranking = Container(
       margin: EdgeInsets.only(top: 5),
       width: 410,
@@ -42,7 +21,6 @@ class rankSreen extends StatelessWidget {
             Color.fromARGB(255, 5, 184, 23),
           ],
         ),
-        //border: Border.all(width: 2, color: Colors.red),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,25 +87,23 @@ class rankSreen extends StatelessWidget {
       ),
     );
     return Scaffold(
-      appBar: AppBar(  
-         centerTitle: true,//căn giữa
+      appBar: AppBar(
+        centerTitle: true, //căn giữa
         title: const Text(
           'Bảng xếp hạng',
-          style: TextStyle(color: Color.fromARGB(255, 248, 244, 244),
+          style: TextStyle(
+            color: Color.fromARGB(255, 248, 244, 244),
           ),
         ),
         backgroundColor: Colors.green,
       ),
-     
       body: Container(
         child: Column(
           children: [
-            Container(
-              
-            ),
+            Container(),
             Expanded(
               child: ListView.builder(
-                padding: EdgeInsets.all(20),                  
+                padding: EdgeInsets.all(20),
                 itemCount: 10,
                 itemBuilder: (context, index) => ranking,
               ),
@@ -136,6 +112,5 @@ class rankSreen extends StatelessWidget {
         ),
       ),
     );
-     
   }
 }

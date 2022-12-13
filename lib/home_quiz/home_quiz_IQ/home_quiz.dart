@@ -1,5 +1,7 @@
+import 'dart:async';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widget/count_down_timer.dart';
 import '../../widget/question_model.dart';
 import '../../widget/constants.dart';
 import '../../widget/next_button.dart';
@@ -26,18 +28,52 @@ class _QuizEasyState extends State<QuizEasy> {
     return db.fedchQuestions();
   }
 
-  @override
-  void initState() {
-    _question = getData();
-    super.initState();
-  }
-
   int index = 0;
   int score = 0;
   bool isPressed = false;
   bool isAlreadySelected = false;
 
-  String Clock = '00:00';
+  @override
+  void initState() {
+    _question = getData();
+    StarTimer();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    timer!.cancel();
+    super.dispose();
+  }
+
+  int seconds = 20;
+  Timer? timer;
+
+  StarTimer() {
+    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        if (seconds > 0) {
+          seconds--;
+        } else if (seconds == 0) {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text('Thông Báo'),
+                  content: Text('Mời bạn chọn câu hỏi vì đã hết giờ !!'),
+                  actions: [
+                    TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text('ok'))
+                  ],
+                );
+              });
+        } else {
+          timer.cancel();
+        }
+      });
+    });
+  }
 
   void nextQuestion(int questionLength) {
     if (index == questionLength - 1) {
@@ -49,12 +85,16 @@ class _QuizEasyState extends State<QuizEasy> {
                 questionLength: questionLength,
                 onPressed: startOver,
               ));
+      timer!.cancel();
     } else {
       if (isPressed) {
         setState(() {
           index++;
           isPressed = false;
           isAlreadySelected = false;
+          timer!.cancel();
+          seconds = 20;
+          StarTimer();
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -91,6 +131,8 @@ class _QuizEasyState extends State<QuizEasy> {
       score = 0;
       isPressed = false;
       isAlreadySelected = false;
+      seconds = 20;
+      StarTimer();
     });
     Navigator.pop(context);
   }
@@ -124,11 +166,31 @@ class _QuizEasyState extends State<QuizEasy> {
                   Padding(
                     padding: const EdgeInsets.all(18),
                     child: Text(
-                      'Score: $score',
+                      'Điểm: $score',
                       style: const TextStyle(
                         fontSize: 18,
                       ),
                     ),
+                  ),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Text(
+                        '$seconds',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 50,
+                        height: 50,
+                        child: CircularProgressIndicator(
+                          value: seconds / 20,
+                          valueColor: const AlwaysStoppedAnimation(Colors.red),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

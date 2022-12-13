@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home_quiz/home_quiz_IQ/home_quiz.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_healthy/home_quiz_difficult_healthy.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_healthy/home_quiz_easy_healthy.dart';
+import 'package:flutter_application_1/home_quiz/home_quiz_healthy/home_quiz_medium_healthy.dart';
 
 class categoryRegimeScrennHealthy extends StatelessWidget {
   @override
@@ -26,7 +29,7 @@ class categoryRegimeScrennHealthy extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizEasyHealthy(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -63,7 +66,7 @@ class categoryRegimeScrennHealthy extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizMediumHealthy(),
                     ));
               },
               style: TextButton.styleFrom(
@@ -100,7 +103,7 @@ class categoryRegimeScrennHealthy extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => QuizEasy(),
+                      builder: (context) => QuizDifficultHealthy(),
                     ));
               },
               style: TextButton.styleFrom(
