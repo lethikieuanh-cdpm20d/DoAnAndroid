@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
 class signupScreen extends StatefulWidget {
@@ -11,7 +12,9 @@ class signupScreen extends StatefulWidget {
 class signupScreenState extends State<signupScreen> {
   TextEditingController txtPasswordController = TextEditingController();
   TextEditingController txtEmailController = TextEditingController();
-  final _auth = FirebaseAuth.instance;
+  //final _auth = FirebaseAuth.instance;
+
+  final ref = FirebaseDatabase.instance.ref().child('users');
 
   @override
   Widget build(BuildContext context) {
@@ -38,11 +41,12 @@ class signupScreenState extends State<signupScreen> {
                             color: Colors.green),
                       ),
                     ),
+
                     Container(
                       padding: const EdgeInsets.all(15),
                       child: TextField(
                         controller: txtEmailController,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                         ),
                         keyboardType: TextInputType.emailAddress,
@@ -67,16 +71,17 @@ class signupScreenState extends State<signupScreen> {
                         ),
                       ),
                     ),
+
                     Container(
                       padding: const EdgeInsets.all(15),
                       child: TextField(
                         controller: txtPasswordController,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                         ),
                         obscureText: true,
                         decoration: InputDecoration(
-                          labelText: 'Nhập mật khẩu',
+                          labelText: 'Mật khẩu',
                           labelStyle: const TextStyle(color: Colors.green),
                           border: const OutlineInputBorder(),
                           prefixIcon: const Icon(
@@ -96,41 +101,51 @@ class signupScreenState extends State<signupScreen> {
                         ),
                       ),
                     ),
+
                     Container(
-                      padding: const EdgeInsets.all(15),
+                      width: 200,
+                      height: 50,
+                      margin: const EdgeInsets.only(top: 15),
                       child: ElevatedButton(
-                        onPressed: () async {
-                          try {
-                            final newUser =
-                                _auth.createUserWithEmailAndPassword(
-                              email: txtEmailController.text,
-                              password: txtPasswordController.text,
-                            );
-                            if (newUser != null) {
-                              Navigator.pop(context, 'Đăng Ký Thành Công !!');
-                            } else {
-                              final snackBar = SnackBar(
-                                  content: Text('Tài Khoản Này Không Hợp Lệ!'));
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(snackBar);
-                            }
-                          } catch (e) {
-                            final snackBar =
-                                SnackBar(content: Text('Có Lỗi Xảy Ra'));
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromARGB(255, 14, 234, 76),
-                            minimumSize: const Size(200, 50),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            )),
-                        child: const Text(
-                          'Đăng Ký Ngay',
+                        style: ButtonStyle(
+                          backgroundColor:
+                              const MaterialStatePropertyAll<Color>(
+                                  Color.fromARGB(255, 3, 165, 6)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
                         ),
+                        child: const Text('Đăng Ký', style: TextStyle(fontSize: 28)),
+                        onPressed: () async {
+                    try {
+                      FirebaseAuth auth = FirebaseAuth.instance;
+                      UserCredential userCredential =
+                          await auth.createUserWithEmailAndPassword(
+                              email: txtEmailController.text, password: txtPasswordController.text);
+                      if (userCredential.user != null) {
+                        String uid = userCredential.user!.uid;
+
+                        ref.child(uid).set({
+                          'email': txtEmailController.text,
+                          'password': txtPasswordController.text,
+                          'name':"",
+                          'uid': uid
+                        });
+                        Navigator.pop(context, 'Đăng Ký Thành Công!');
+                      } else {
+                        final snackBar = SnackBar(
+                            content: Text('Tài khoản này không hợp lệ!'));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }
+                    } catch (e) {
+                      final snackBar =
+                          SnackBar(content: Text('Có lỗi xảy ra!'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
+                  },
                       ),
                     ),
                   ],

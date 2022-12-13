@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/invite.dart';
 
@@ -7,6 +8,18 @@ import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/profile_Screen/profile_screen.dart';
 import 'package:flutter_application_1/rank.dart';
 import 'package:flutter_application_1/search.dart';
+
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+
+import 'package:flutter_application_1/login.dart';
+import 'package:flutter_application_1/profile/profile_screen.dart';
+
+import 'package:flutter_application_1/search.dart';
+import 'package:flutter_application_1/signup.dart';
+import 'package:flutter_application_1/start.dart';
+import 'login.dart';
+
 import 'category_list/category.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
@@ -20,13 +33,14 @@ class homepageScreeen extends StatelessWidget {
 }
 
 class homepageScreenHome extends StatefulWidget {
+  const homepageScreenHome ({Key? key}): super(key: key);
+  
   @override
-  State<StatefulWidget> createState() {
-    return homepageScreenState();
-  }
+  State<StatefulWidget> createState() => homepageScreenState();
 }
 
 class homepageScreenState extends State<homepageScreenHome> {
+  final user = FirebaseAuth.instance.currentUser!;
   int selectedIndex = 1;
   final Widget _myHome = MyHome();
   final Widget _myCategorys = MyCategorys();
@@ -255,6 +269,10 @@ class MyCategorys extends StatelessWidget {
 class Challenge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return InviteChallengeScreen();
+
+    return signupScreen();
+
   }
 }
