@@ -54,6 +54,13 @@ class _QuizDifficultState extends State<QuizDifficultHistory> {
           seconds--;
         } else {
           timer.cancel();
+          setState(() {
+            index++;
+            isPressed = false;
+            isAlreadySelected = false;
+            seconds = 20;
+            StarTimer();
+          });
         }
       });
     });

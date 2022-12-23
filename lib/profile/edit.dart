@@ -1,4 +1,3 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:firebase_database/firebase_database.dart';
@@ -86,7 +85,7 @@ class EditprofileScreenState extends State<EditprofileScreen> {
               margin: const EdgeInsets.only(top: 40),
               child: ClipOval(
                 child: Image.asset(
-                  'images/anh.png',
+                  'images/doi.jpg',
                   width: 140,
                   height: 140,
                   fit: BoxFit.cover,
@@ -95,7 +94,6 @@ class EditprofileScreenState extends State<EditprofileScreen> {
             ),
             Container(
               margin: const EdgeInsets.only(top: 20, bottom: 20),
-              //padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   const Text(
@@ -113,7 +111,7 @@ class EditprofileScreenState extends State<EditprofileScreen> {
                           style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.pink),
+                              color: Colors.black),
                         ),
                         filled: true,
                         fillColor: Color.fromARGB(255, 172, 240, 172),
@@ -174,31 +172,29 @@ class EditprofileScreenState extends State<EditprofileScreen> {
                         ref.child(lsUser[i].uid).update({
                           'name': txtname.text,
                         });
+                      } else if (txtname.text == '') {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: const Text(
+                                  'THÔNG BÁO',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                content: Text('Mời nhập tên <3'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text('OK'),
+                                  ),
+                                ],
+                              );
+                            });
                       }
-                      else if (txtname.text == '')
-                    {
-                         showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: const Text(
-                              'THÔNG BÁO',
-                              style: TextStyle(fontSize: 20),
-                            ),
-                            content: Text('Mời nhập tên <3'),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: Text('OK'),
-                              ),
-                            ],
-                          );
-                        });
                     }
-                    } 
-                    
+
                     Navigator.push(
                         context,
                         MaterialPageRoute(

@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../widget/question_model.dart';
 import '../../widget/constants.dart';
@@ -54,22 +52,15 @@ class _QuizEasyState extends State<QuizEasy> {
       setState(() {
         if (seconds > 0) {
           seconds--;
-        } else if (seconds == 0) {
-          showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  title: Text('Thông Báo'),
-                  content: Text('Mời bạn chọn câu hỏi vì đã hết giờ !!'),
-                  actions: [
-                    TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text('ok'))
-                  ],
-                );
-              });
         } else {
           timer.cancel();
+          setState(() {
+            index++;
+            isPressed = false;
+            isAlreadySelected = false;
+            seconds = 20;
+            StarTimer();
+          });
         }
       });
     });

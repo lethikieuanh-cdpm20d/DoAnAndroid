@@ -54,6 +54,13 @@ class _QuizEasyState extends State<QuizEasyHistory> {
           seconds--;
         } else {
           timer.cancel();
+          setState(() {
+            index++;
+            isPressed = false;
+            isAlreadySelected = false;
+            seconds = 20;
+            StarTimer();
+          });
         }
       });
     });

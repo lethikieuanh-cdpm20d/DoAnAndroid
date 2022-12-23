@@ -11,6 +11,10 @@ class _InviteChallengeScreenState extends State<InviteChallengeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Thách Đấu'),
+        backgroundColor: const Color.fromARGB(255, 17, 224, 93),
+      ),
       body: Container(
         width: 400,
         height: 380,

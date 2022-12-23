@@ -57,6 +57,13 @@ class _QuizMediumState extends State<QuizMediumIQ> {
           seconds--;
         } else {
           timer.cancel();
+          setState(() {
+            index++;
+            isPressed = false;
+            isAlreadySelected = false;
+            seconds = 20;
+            StarTimer();
+          });
         }
       });
     });
