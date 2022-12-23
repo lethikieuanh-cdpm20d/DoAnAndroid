@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/homepage.dart';
 import '../category_list/category.dart';
 import 'constants.dart';
 
@@ -84,7 +85,7 @@ class ResultBox extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => categoryScreen(),
+                      builder: (context) => homepageScreeen(),
                     ),
                   );
                 },

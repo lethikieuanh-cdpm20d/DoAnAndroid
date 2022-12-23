@@ -85,7 +85,7 @@ class EditprofileScreenState extends State<EditprofileScreen> {
               margin: const EdgeInsets.only(top: 40),
               child: ClipOval(
                 child: Image.asset(
-                  'images/anh.png',
+                  'images/doi.jpg',
                   width: 140,
                   height: 140,
                   fit: BoxFit.cover,
@@ -94,7 +94,6 @@ class EditprofileScreenState extends State<EditprofileScreen> {
             ),
             Container(
               margin: const EdgeInsets.only(top: 20, bottom: 20),
-              //padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   const Text(
@@ -112,7 +111,7 @@ class EditprofileScreenState extends State<EditprofileScreen> {
                           style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
-                              color: Colors.pink),
+                              color: Colors.black),
                         ),
                         filled: true,
                         fillColor: Color.fromARGB(255, 172, 240, 172),

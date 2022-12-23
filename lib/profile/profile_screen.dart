@@ -75,7 +75,7 @@ class ProfileScreenState extends State<ProfileScreen> {
               margin: EdgeInsets.only(top: 50),
               child: ClipOval(
                 child: Image.asset(
-                  'images/person.png',
+                  'images/thongtin.jpg',
                   width: 140,
                   height: 140,
                   fit: BoxFit.cover,

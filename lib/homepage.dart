@@ -1,13 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/invite.dart';
-
 import 'package:flutter_application_1/listfriend.dart';
 import 'package:flutter_application_1/login.dart';
 import 'package:flutter_application_1/rank.dart';
 import 'package:flutter_application_1/search.dart';
-
 import 'package:flutter_application_1/profile/profile_screen.dart';
 import 'category_list/category.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -113,7 +110,7 @@ class homepageScreenState extends State<homepageScreenHome> {
                 ),
                 ListTile(
                   leading: const Icon(
-                    Icons.person,
+                    Icons.list_alt_rounded,
                     color: Colors.blue,
                   ),
                   title: const Text('Bạn bè'),
@@ -127,30 +124,20 @@ class homepageScreenState extends State<homepageScreenHome> {
                 ),
                 ListTile(
                   leading: const Icon(
-                    Icons.insert_chart_outlined,
-                    color: Colors.orange,
+                    Icons.history,
+                    color: Colors.pink,
                   ),
-                  title: const Text('Bảng xếp hạng'),
+                  title: const Text('Lịch Sử Chơi'),
                   onTap: () {
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
                   leading: const Icon(
-                    Icons.map,
-                    color: Colors.red,
+                    Icons.settings,
+                    color: Colors.grey,
                   ),
-                  title: const Text('Checking'),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                ListTile(
-                  leading: const Icon(
-                    Icons.camera,
-                    color: Colors.lightBlue,
-                  ),
-                  title: const Text('Camera'),
+                  title: const Text('Cài đặt'),
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -232,6 +219,10 @@ class homepageScreenState extends State<homepageScreenHome> {
                 TabItem(icon: Icons.list, title: 'Chủ đề'),
                 TabItem(icon: Icons.house, title: '            '),
                 TabItem(icon: Icons.gamepad_outlined, title: 'Thách đấu'),
+                TabItem(icon: Icons.newspaper, title: 'Tin Tức'),
+                TabItem(icon: Icons.history, title: 'Lịch sử thi đấu'),
+                TabItem(icon: Icons.person, title: 'Bảng xếp hạng'),
+                TabItem(icon: Icons.store, title: 'Cửa hàng'),
               ],
               initialActiveIndex: 1,
               onTap: (int index) {
